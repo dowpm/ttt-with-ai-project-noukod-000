@@ -49,7 +49,9 @@ class Game
       turn
     else
       puts "\nTurn: #{@board.turn_count+1}\n"
+      # board.display
       board.update input, current_player
+      puts "Player #{current_player} move to position #{input}"
       board.display
       puts "\n"
     end
