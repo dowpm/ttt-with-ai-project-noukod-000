@@ -26,10 +26,9 @@ class Game
     return false if board.cells.all? {|index| index == " "  }
 
     WIN_COMBINATIONS.detect do |win_combination|
-      win_combination.all? {|cell| board.cells[cell] == "X"} or 
+      win_combination.all? {|cell| board.cells[cell] == "X"} or
       win_combination.all? {|cell| board.cells[cell] == "O"}
     end
-    
   end
 
   def draw?
