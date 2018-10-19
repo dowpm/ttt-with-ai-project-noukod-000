@@ -6,7 +6,7 @@ class Player
   end
 
   def move board
-    puts "Enter a position 1-9 :"
+    puts "Enter a position 1-9 (#{token}) :"
   end
 
 end
