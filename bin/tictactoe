@@ -25,6 +25,7 @@ until input == "exit"
       game.play
     end
   when 2
+    system "cls" or system "clear"
     game = Game.new
     game.paly
   when 3
@@ -32,4 +33,3 @@ until input == "exit"
   end
 end
 puts "Bye Bye!!"
-  
