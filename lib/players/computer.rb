@@ -1,4 +1,5 @@
 module Players
+  attr_accessor :m
   class Computer < Player
 
     def initialize (token)
@@ -8,7 +9,7 @@ module Players
 
     def move board
       mo = rand(9).to_i
-      if !@m.include?(mo)
+      if !m.include?(mo)
         @m << mo
         return mo
       else
