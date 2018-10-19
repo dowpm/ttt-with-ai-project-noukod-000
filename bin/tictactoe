@@ -32,6 +32,7 @@ until input == "exit"
   when 3
     input = "exit"
   end
+  return if input == "exit"
   puts "\n","Do you want to re-play? (y/n)"
   input = gets.strip.downcase
   input = "exit" if input == "n" or input == "no"
