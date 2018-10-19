@@ -13,6 +13,9 @@ until input == "exit"
 
   case kind
   when 0
+    game = Game.new(Players::Computer.new("X"),Players::Computer.new("O"))
+    system "cls" or system "clear"
+    game.play
   when 1
     puts "Do you want to go first with X ? (y/n)"
     choice = gets.strip.downcase
