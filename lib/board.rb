@@ -37,8 +37,8 @@ class Board
     (1..9).include?(input.to_i) && !taken?(input)
   end
 
-  def update(position,player)
-    cells[position.to_i-1] = player.token
+  def update(input,player)
+    position input = player.token
   end
 
 end
