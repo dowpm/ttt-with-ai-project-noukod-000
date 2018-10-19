@@ -5,6 +5,6 @@ module Players
       super
       gets.strip
     end
-    
+
   end
 end

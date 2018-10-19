@@ -19,6 +19,11 @@ until input == "exit"
       game = Game.new(Players::Human.new("X"),Players::Computer.new("O"))
       system "cls" or system "clear"
       game.play
+    else
+      game = Game.new(Players::Computer.new("X"),Players::Human.new("O"))
+      system "cls" or system "clear"
+      game.play
+    end
   when 2
     game = Game.new
     game.paly
