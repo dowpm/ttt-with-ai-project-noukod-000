@@ -3,12 +3,17 @@ module Players
 
     def initialize (token)
       super
-      @m = (1..9).to_a
+      @m = []
     end
 
     def move board
-      m = rand(9-board.turn_count).to_i
-      (1..9)
+      mo = rand(9).to_i
+      if !m.include?(mo)
+        @m << mo
+        return mo
+      else
+        move board
+      end
     end
   end
 
