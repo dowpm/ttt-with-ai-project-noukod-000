@@ -2,10 +2,10 @@ module Players
   # attr_accessor :m
   class Computer < Player
 
-    # def initialize (token)
-    #   super
-    #   @m = []
-    # end
+    def initialize (token)
+      super
+      @m = []
+    end
 
     def move board
       mo = rand(9).to_i
