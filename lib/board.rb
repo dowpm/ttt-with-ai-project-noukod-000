@@ -30,7 +30,7 @@ class Board
   end
 
   def taken?(input)
-    cells[input.to_i-1] != "" && cells[input.to_i-1] != " "
+    position input != "" && position input != " "
   end
 
   def valid_move?(input)
