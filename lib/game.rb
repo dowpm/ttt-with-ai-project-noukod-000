@@ -32,11 +32,11 @@ class Game
   end
 
   def draw?
-    (board.full? and !won?) ? true : false
+    board.full? and !won?
   end
 
   def over?
-    draw? or won? ? true : false
+    draw? or won? 
   end
 
   def winner
