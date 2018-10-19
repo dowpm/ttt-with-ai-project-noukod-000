@@ -51,6 +51,7 @@ class Game
       turn
     else
       board.update input, current_player
+      board.display
     end
   end
 
