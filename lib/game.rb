@@ -36,7 +36,7 @@ class Game
   end
 
   def over?
-    draw? or won? 
+    draw? or won?
   end
 
   def winner
