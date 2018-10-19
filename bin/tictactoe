@@ -1,3 +1,18 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+# require 'pry'
+game = Game.new
+
+# binding.pry
+
+puts "Welcom to Tic-tac-toe game"
+
+puts "What kind of game do you want to play:"
+
+kind = gets.strip.to_i
+
+case kind
+when 2
+  game.paly
+end

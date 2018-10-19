@@ -1,0 +1,70 @@
+class Game
+  attr_accessor :board, :player_1, :player_2
+
+  WIN_COMBINATIONS = [
+    [0,1,2],  # Top row
+    [3,4,5],  # Middle row
+    [6,7,8],  # Bottom row
+    [2,4,6],  # Diagonal 1
+    [0,4,8],  # diagonal 2
+    [0,3,6],  # left
+    [1,4,7],  # Middle
+    [2,5,8]   # right
+]
+
+  def initialize player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board = Board.new
+
+    @player_1, @player_2, @board = player_1, player_2, board
+
+  end
+
+  def current_player
+    board.turn_count.even? ? player_1 : player_2
+  end
+
+  def won?
+    return false if board.cells.all? {|index| index == " "  }
+
+    WIN_COMBINATIONS.each do |win_combination|
+      if win_combination.all? {|cell| board.cells[cell] == "X"} or win_combination.all? {|cell| board.cells[cell] == "O"}
+        return win_combination
+      end
+    end
+    return false
+  end
+
+  def draw?
+    (board.full? and !won?) ? true : false
+  end
+
+  def over?
+    draw? or won? ? true : false
+  end
+
+  def winner
+    board.cells[won?[0]] if won?
+  end
+
+  def turn
+    input = current_player.move board
+    if !board.valid_move? input
+      turn
+    else
+      board.update input, current_player
+    end
+  end
+
+  def play
+    until over? == true
+      turn
+    end
+
+    if won?
+      puts "Congratulations #{winner}!"
+    else
+      puts "Cat's Game!"
+    end
+
+  end
+
+end
