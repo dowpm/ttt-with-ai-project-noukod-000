@@ -30,7 +30,7 @@ class Board
   end
 
   def taken?(input)
-    position input != "" && position input != " "
+    position(input) != "" && position(input) != " "
   end
 
   def valid_move?(input)
@@ -38,7 +38,7 @@ class Board
   end
 
   def update(input,player)
-    position input = player.token
+    position(input) = player.token
   end
 
 end
