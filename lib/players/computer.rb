@@ -13,7 +13,7 @@ module Players
         move board
       else
         @m << mo
-        return mo
+        return mo.to_s
       end
     end
   end
