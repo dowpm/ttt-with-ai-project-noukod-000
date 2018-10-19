@@ -1,8 +1,8 @@
 class Player
-  attr_reader :token, :m
+  attr_reader :token
 
   def initialize token
-    @token, @m = token, []
+    @token = token
   end
 
   def move board
