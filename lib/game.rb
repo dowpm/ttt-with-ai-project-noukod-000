@@ -25,12 +25,12 @@ class Game
   def won?
     return false if board.cells.all? {|index| index == " "  }
 
-    WIN_COMBINATIONS.each do |win_combination|
-      if win_combination.all? {|cell| board.cells[cell] == "X"} or win_combination.all? {|cell| board.cells[cell] == "O"}
-        return win_combination
-      end
+    WIN_COMBINATIONS.detect do |win_combination|
+      win_combination.all? {|cell| board.cells[cell] == "X"} or win_combination.all? {|cell| board.cells[cell] == "O"}
+      #   return win_combination
+      # end
     end
-    return false
+    # return false
   end
 
   def draw?
