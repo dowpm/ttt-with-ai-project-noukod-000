@@ -2,6 +2,7 @@
 
 require_relative '../config/environment'
 
+input = ""
 until input == "exit"
   system "cls" or system "clear"
   puts "Welcom to Tic-tac-toe game"
@@ -31,5 +32,8 @@ until input == "exit"
   when 3
     input = "exit"
   end
+  puts "\n","Do you want to re-play? (y/n)"
+  input = gets.strip.downcase
+  input = "exit" if input == "n" or input == "no"
 end
 puts "Bye Bye!!"
