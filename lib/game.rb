@@ -53,6 +53,7 @@ class Game
       puts "\nTurn: #{@board.turn_count+1}\n"
       board.update input, current_player
       board.display
+      puts "\n"
     end
   end
 
