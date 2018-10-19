@@ -1,18 +1,30 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
-# require 'pry'
-game = Game.new
 
-# binding.pry
+until input == "exit"
+  system "cls" or system "clear"
+  puts "Welcom to Tic-tac-toe game"
 
-puts "Welcom to Tic-tac-toe game"
+  puts "What kind of game do you want to play:","0. Computer vs Computer","1. Player vs Computer","2. Player vs Player","3. Exit"
 
-puts "What kind of game do you want to play:"
+  kind = gets.strip.to_i
 
-kind = gets.strip.to_i
-
-case kind
-when 2
-  game.paly
+  case kind
+  when 0
+  when 1
+    puts "Do you want to go first with X ? (y/n)"
+    choice = gets.strip.downcase
+    if choice == "y" or choice == "yes"
+      game = Game.new(Players::Human.new("X"),Players::Computer.new("O"))
+      system "cls" or system "clear"
+      game.play
+  when 2
+    game = Game.new
+    game.paly
+  when 3
+    input = "exit"
+  end
 end
+puts "Bye Bye!!"
+  
