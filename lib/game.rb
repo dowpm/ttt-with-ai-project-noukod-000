@@ -50,6 +50,7 @@ class Game
     if !board.valid_move? input
       turn
     else
+      puts "\nTurn: #{@board.turn_count+1}\n"
       board.update input, current_player
       board.display
     end
