@@ -28,7 +28,7 @@ until input == "exit"
   when 2
     system "cls" or system "clear"
     game = Game.new
-    game.paly
+    game.play
   when 3
     input = "exit"
   end
